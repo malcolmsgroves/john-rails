@@ -1,6 +1,7 @@
 class Toilet < ApplicationRecord
   has_one :location
   validates :name, presence: true
+  accepts_nested_attributes_for :location
 
   # set per page limit for paginate
   self.per_page = 10

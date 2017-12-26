@@ -1,0 +1,16 @@
+$('nav .container').html(
+  '<%= j render partial: "toilet_form", locals: { toilet: @toilet, type_options: @type_options, location: @location } %>',
+  setLocation(),
+)
+
+function setLocation() {
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position.coords);
+      $('#toilet_lat').val(position.coords.latitude);
+      $('#toilet_lng').val(position.coords.longitude);
+    }, function(error) {
+      alert(error);
+    }, {enableHighAccuracy: true, maximumAge: 0});
+  }
+}

@@ -1,11 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-let loading = false;
-let $toilets;
-let page = 1;
-
-$(function() {
+$(document).on('turbolinks:load', function() {
   $toilets = $('#toilets');
   setInfiniteScroll();
 });

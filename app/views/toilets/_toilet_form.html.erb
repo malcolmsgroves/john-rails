@@ -1,0 +1,15 @@
+<%= form_for toilet, remote: true do |f| %>
+  <%= f.text_field :name, placeholder: "name", class: "form-control" %>
+  <%= f.select :toilet_type, type_options, class: "form-control" %>
+  <%= f.text_area :description, placeholder: "description...", class: "form-control" %>
+  <%= f.fields_for :location do |ff| %>
+    <%= ff.hidden_field :lat, value: '', id: "toilet_lat" %>
+    <%= ff.hidden_field :lng, value: '', id: "toilet_lng" %>
+  <% end %>
+  <%= f.submit "Submit", id: "new-toilet", class: "btn-primary btn form-control" %>
+<% end %>
+<a href="<%= toilets_cancel_new_path %>" data-remote="true">
+  <button class="btn btn-danger">
+    cancel
+  </button>
+</a>
