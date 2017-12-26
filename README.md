@@ -1,24 +1,21 @@
-# README
+# JOHN
+A crowd-sourced restroom locator for mobile and web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running
+This is a single-page rails application. Start by downloading the repository. Then run ```rails server``` to get it started. In order to use the geolocation services, you will have to run it in chrome (safari requires https protocol, which heroku sets up for production).
 
-Things you may want to cover:
+## Technologies
+  * Bootstrap, bootstrap, bootstrap
+  * Rails
+  * jQuery
 
-* Ruby version
+## TODO
+- [ ] Add google maps javascript api
+  * When clicked, a bathroom should slide up and display an inset with a map
+- [ ] Allow users to rate existing bathrooms
+  * Persist user ratings in database
+- [ ] Implement user authentication
+  * Thinking of using okta with devise
+- [ ] Throw this bad boy on heroku
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  
