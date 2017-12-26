@@ -1,0 +1,12 @@
+<h1>Nearby</h1>
+<%= form_for @toilet do |f| %>
+  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.select :toilet_type, @toilet_type_options %>
+  <%= f.submit "Submit", id: "new-toilet" %>
+<% end %>
+<ul id="toilets">
+  <%= render @toilets %>
+</ul>
+<div id="infinite-scrolling">
+  <%= will_paginate %>
+</div>
