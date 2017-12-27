@@ -1,5 +1,8 @@
+require 'will_paginate/array'
+
 class ToiletsController < ApplicationController
   @current_location = nil
+  WillPaginate.per_page = 10
 
   def new
     @toilet = Toilet.new()
@@ -22,10 +25,11 @@ class ToiletsController < ApplicationController
     if params[:lat] && params[:lng]
       @current_location = Location.new(lat: params[:lat], lng: params[:lng])
       @toilets = Toilet.close_to(@current_location).paginate(page: params[:page])
+      puts @toilets
     elsif !@current_location
       @toilets = []
     else
-      @toilets = Toilet.close_to(@current_location).paginate(page: params[:page])
+      @toilets.paginate(page: params[:page])
     end
 
     respond_to do |format|
