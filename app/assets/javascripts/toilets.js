@@ -12,7 +12,7 @@ function setInfiniteScroll() {
     window.onscroll = function(ev) {
       let more_posts_url = $('.pagination a.next_page').attr('href');
       if(more_posts_url && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        $('.pagination').html('Loading...');
+        $('.loading').show();
         $.getScript(more_posts_url);
       }
     }
