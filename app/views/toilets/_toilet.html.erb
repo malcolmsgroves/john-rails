@@ -1,4 +1,10 @@
-<li class="list-group-item">
-  <p><a href="<%= toilet_path(toilet) %>"><strong><%= toilet.name %></strong></a>:  <%= toilet.toilet_type %></p>
+<li class="list-group-item list-group-item-action flex-column align-items-start" id="<%= "toilet_#{toilet.id}" %>">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1"><%= toilet.name %>:  <%= toilet.toilet_type %></h5>
+    <small><%= toilet.location.distance_to(@current_location) %></small>
+  </div>
+
+</li>
+<li class="list-group-item hidden">
   <p><%= toilet.description %></p>
 </li>

@@ -1,15 +1,13 @@
-if($('.pagination').size() === 0) {
-  $('#toilets').append('<div id="infinite-scrolling"><%= will_paginate %></div>');
-}
-
-setInfiniteScroll();
+console.log('<%= params[:page] %>');
 
 $('#toilets').append('<%= j render @toilets %>');
 $('.loading').hide();
 
 <% if @toilets.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @toilets %>');
+  setInfiniteScroll();
 <% else %>
+  console.log('last page');
   $(window).off('scroll');
   $('.pagination').remove();
 <% end %>
