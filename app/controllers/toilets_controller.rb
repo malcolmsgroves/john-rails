@@ -2,7 +2,7 @@ require 'will_paginate/array'
 
 class ToiletsController < ApplicationController
   @current_location = nil
-  WillPaginate.per_page = 10
+  WillPaginate.per_page = 15
 
   def new
     @toilet = Toilet.new()
@@ -38,7 +38,7 @@ class ToiletsController < ApplicationController
     end
   end
 
-  
+
 
   def create
     @toilet = Toilet.new(toilet_params)
