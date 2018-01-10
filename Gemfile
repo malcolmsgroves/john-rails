@@ -13,7 +13,7 @@ gem 'pg', '~> 0.18'
 gem 'faker'
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.1.0'
-gem 'geokit-rails'
+gem 'geocoder'
 
 
 # Use Puma as the app server
