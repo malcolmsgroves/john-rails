@@ -6,7 +6,7 @@ module ToiletsHelper
       "#{miles.round(1)} miles"
     else
       feet = miles * 5280
-      "#{feet.round(-2)} feet"
+      "#{feet.round(-1)} feet"
     end
   end
 end
