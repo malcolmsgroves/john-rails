@@ -17,3 +17,8 @@ div#infinite-scrolling {
 .hidden {
   display: none;
 }
+
+div.static-map > img {
+  width: 80%;
+  margin: auto;
+}
