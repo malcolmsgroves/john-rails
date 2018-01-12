@@ -11,3 +11,11 @@ $('.loading').hide();
   $(window).off('scroll');
   $('.pagination').remove();
 <% end %>
+
+
+
+
+$('button.review').on('click', function(event) {
+  $('#reviewModal').modal('show');
+  $('#review_toilet_id').val($(this).val());
+});

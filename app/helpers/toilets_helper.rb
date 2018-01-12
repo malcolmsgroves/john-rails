@@ -9,4 +9,25 @@ module ToiletsHelper
       "#{feet.round(-1)} feet"
     end
   end
+
+  def toilet_image(type)
+    type.downcase!
+    case type
+    when "portapotty"
+      "portapotty.jpg"
+    when "outhouse"
+      "outhouse.png"
+    when "public bathroom"
+      "public.png"
+    when "store"
+      "store.png"
+    else
+      "unknown.png"
+    end
+  end
+
+  def average_rating(toilet)
+    average = toilet.reviews.average(:rating)
+    average ? average : "-"
+  end
 end

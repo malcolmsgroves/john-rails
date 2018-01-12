@@ -1,13 +1,20 @@
 <li class="list-group-item list-group-item-action flex-column align-items-start" id="<%= "toilet_#{toilet.id}" %>">
   <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1"><%= toilet.name %>:  <%= toilet.toilet_type %></h5>
+    <%= image_tag(toilet_image(toilet.toilet_type), class: "toilet-icon") %>
+    <h5 class="mb-1"><%= toilet.name %></h5>
     <small><%= distance_in_words(toilet.location.distance_to(@current_location)) %></small>
   </div>
 
 </li>
 <li class="list-group-item hidden">
   <p><%= toilet.description %></p>
+  Rating: <%= average_rating(toilet) %> / 5
   <div class="static-map">
     <img src="<%="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7C#{toilet.location.lat},#{toilet.location.lng}&markers=color:green%7C#{@current_location.lat},#{@current_location.lng}&size=400x400&scale=2&key=AIzaSyBHyQP8xlcgazFtPSs6CuP776FnUYFVAXc"%>">
   </div>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary review" value="<%= toilet.id%>">
+    Review
+  </button>
 </li>

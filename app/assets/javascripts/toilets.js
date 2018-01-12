@@ -4,6 +4,7 @@
 $(document).on('turbolinks:load', function() {
   setInfiniteScroll();
   setInfoClick();
+  setReviewSubmit();
 });
 
 /* Infinite Scroll */
@@ -21,25 +22,33 @@ function setInfiniteScroll() {
         $('.loading').show();
         $.getScript(more_posts_url);
       }
-    }
+    };
   }
 }
 
 function setInfoClick() {
   $('#toilets').on('click', 'li', function(event) {
-    let disable_current = false;
-    if($(this).attr('id') === $('.active').attr('id')) {
-      disable_current = true;
-    }
+    if($(this).attr('id')) { // avoid including the info <li> elements
+      let disable_current = false;
+      if($(this).attr('id') === $('.active').attr('id')) {
+        disable_current = true;
+      }
 
-    // remove old active classes
-    $('.active').next().addClass('hidden');
-    $('.active').removeClass('active');
+      // remove old active classes
+      $('.active').next().addClass('hidden');
+      $('.active').removeClass('active');
 
-    // add new active class
-    if(!disable_current) {
-      $(this).addClass('active');
-      $(this).next().removeClass('hidden');
+      // add new active class
+      if(!disable_current) {
+        $(this).addClass('active');
+        $(this).next().removeClass('hidden');
+      }
     }
-  })
+  });
+}
+
+function setReviewSubmit() {
+  $('button#review-submit').on('click', function(event) {
+    $('form#review-form').submit();
+  });
 }

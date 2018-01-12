@@ -25,12 +25,15 @@ class ToiletsController < ApplicationController
     if params[:lat] && params[:lng]
       @current_location = Location.new(lat: params[:lat], lng: params[:lng])
       @toilets = Toilet.close_to(@current_location).paginate(page: params[:page])
+
       puts params[:page]
       puts
       puts "HERE"
     else
       @toilets = []
     end
+
+    @review = Review.new()
 
     respond_to do |format|
       format.html
