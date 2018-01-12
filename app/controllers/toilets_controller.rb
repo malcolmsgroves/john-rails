@@ -34,6 +34,7 @@ class ToiletsController < ApplicationController
     end
 
     @review = Review.new()
+    @rating_options = [["5 - Ritzy", 5], ["4 - Mom cleaned", 4], ["3 - Servicable", 3], ["2 - Rather use the woods", 2], ["1 - Unspeakable", 1]]
 
     respond_to do |format|
       format.html

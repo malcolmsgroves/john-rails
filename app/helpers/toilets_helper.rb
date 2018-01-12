@@ -28,6 +28,6 @@ module ToiletsHelper
 
   def average_rating(toilet)
     average = toilet.reviews.average(:rating)
-    average ? average : "-"
+    average ? average.round(1) : "-"
   end
 end
