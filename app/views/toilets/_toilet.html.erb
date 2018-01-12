@@ -1,14 +1,19 @@
 <li class="list-group-item list-group-item-action flex-column align-items-start" id="<%= "toilet_#{toilet.id}" %>">
-  <div class="d-flex w-100 justify-content-between">
-    <%= image_tag(toilet_image(toilet.toilet_type), class: "toilet-icon") %>
-    <h5 class="mb-1"><%= toilet.name %></h5>
-    <small><%= distance_in_words(toilet.location.distance_to(@current_location)) %></small>
+  <div class="d-flex w-100 justify-content-start">
+    <div class="toilet-icon"><%= image_tag(toilet_image(toilet.toilet_type)) %></div>
+    <div class="flex-element toilet-name"><h5 class="mb-1"><%= toilet.name %></h5></div>
+    <div class="ml-auto flex-element">
+      <small><%= distance_in_words(toilet.location.distance_to(@current_location)) %></small>
+    </div>
   </div>
 
 </li>
 <li class="list-group-item hidden">
   <p><%= toilet.description %></p>
-  Rating: <%= average_rating(toilet) %> / 5
+  <div class="review">
+    <strong>Rating: <%= average_rating(toilet) %> / 5</strong>
+    <small>(<%= toilet.reviews.count %> reviews)</small>
+  </div>
   <div class="static-map">
     <img src="<%="https://maps.googleapis.com/maps/api/staticmap?markers=color:red%7C#{toilet.location.lat},#{toilet.location.lng}&markers=color:green%7C#{@current_location.lat},#{@current_location.lng}&size=400x400&scale=2&key=AIzaSyBHyQP8xlcgazFtPSs6CuP776FnUYFVAXc"%>">
   </div>

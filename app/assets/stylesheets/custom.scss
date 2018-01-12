@@ -18,9 +18,14 @@ div#infinite-scrolling {
   display: none;
 }
 
-div.static-map > img {
-  width: 80%;
-  margin: auto;
+div.static-map {
+  margin: 1em auto;
+  width: 100%;
+  padding: 0 15%;
+  > img {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 ul {
@@ -29,5 +34,12 @@ ul {
 }
 
 .toilet-icon {
-  height: 2em;
+  > img {
+    height: 2em;
+  }
+}
+
+div.toilet-name {
+  position: absolute;
+  left: 5em;
 }
