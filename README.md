@@ -7,7 +7,7 @@ A simple single-page responsive web application for locating toilets. Toilet loc
 John is a single-page web application built on the rails framework. The rails framework serves both AJAX requests and HTML partials. The Bootstrap library is used to style the page. The page elements are manipulated using jQuery rendered as js scripts from the rails controller. Some notable features are detailed below.
 
 ### Infinite Scroll
-Toilets are loaded lazily using the will_paginate gem and AJAX requests to the toilets#index controller method.
+Toilets are loaded lazily using the **will_paginate** gem and **AJAX** requests to *toilets#index*.
 
 ![infinite scroll](docs/infinite_scroll.png)
 
@@ -27,7 +27,7 @@ Users can review toilets by clicking on the review button, which triggers a moda
 ![modal](docs/modal.png)
 
 ## Technologies
-  * Bootstrap, bootstrap, bootstrap
+  * Bootstrap
   * Rails
   * jQuery
   * AJAX
@@ -38,6 +38,6 @@ Users can review toilets by clicking on the review button, which triggers a moda
 - [ ] Include more description and review options
   * Could remove old unused toilets or move them down in the index.
   * Differentiate toilets further based on style
-  * Pictures? Probably nah...
+  * Pictures? Probably not...
 
   
