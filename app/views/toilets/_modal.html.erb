@@ -11,10 +11,8 @@
       <div class="modal-body">
         <%= form_for @review, remote: true, html: { id: "review-form" } do |f| %>
           <%= f.text_field :name, placeholder: "name", class: "form-control" %>
-          Rating: <%= f.select :rating, @rating_options, class: "form-control" %>
+          <strong>Rating:</strong> <%= f.select :rating, @rating_options, {}, { class: "form-control" } %>
           <%= f.hidden_field :toilet_id %>
-
-          <!-- <%= f.submit "Submit", id: "new-toilet", class: "btn-primary btn form-control" %> -->
         <% end %>
       </div>
       <div class="modal-footer">

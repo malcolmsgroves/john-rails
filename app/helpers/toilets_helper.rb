@@ -30,4 +30,8 @@ module ToiletsHelper
     average = toilet.reviews.average(:rating)
     average ? average.round(1) : "-"
   end
+
+  def last_review_in_words(toilet)
+    "Last review #{time_ago_in_words(toilet.reviews.last.created_at)} ago" if toilet.reviews.any?
+  end
 end
