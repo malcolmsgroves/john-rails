@@ -14,6 +14,7 @@ gem 'faker'
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.1.0'
 gem 'geocoder'
+gem 'devise'
 
 
 # Use Puma as the app server

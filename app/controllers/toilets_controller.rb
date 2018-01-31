@@ -1,7 +1,8 @@
 require 'will_paginate/array'
 
 class ToiletsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create]
+  
   WillPaginate.per_page = 15
 
   def new
