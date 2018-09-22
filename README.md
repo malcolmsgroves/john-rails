@@ -1,8 +1,9 @@
 # JOHN
 live [here](https://evening-gorge-10795.herokuapp.com)
 
-## Sample login credentials
+Sample login credentials
 U: example@app.com
+
 P: ketchum
 
 A simple single-page responsive web application for locating toilets. Toilet locations are crowd-sourced and georeferenced using the HTML5 geolocation service. The index of toilets is ordered by the distance from the user. Users can review toilets as well. Rating statistics, a map showing the toilet and the user's current location, and a description are included as a dropdown for each toilet.
