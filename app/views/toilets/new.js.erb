@@ -2,7 +2,7 @@ if(!<%= user_signed_in? %>) {
   window.location.replace("<%= new_user_session_path %>");
 }
 
-$('nav .container').html(
+$('nav#header').html(
   '<%= j render partial: "toilet_form", locals: { toilet: @toilet, type_options: @type_options, location: @location } %>',
   setLocation(),
 )

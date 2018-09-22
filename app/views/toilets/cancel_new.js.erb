@@ -1,3 +1,7 @@
-$('nav .container').html(
-  '<%= j render "new_toilet" %>'
+$('nav#header').html(
+  '<div class="navbar-nav mr-auto">' +
+  '<%= j render "new_toilet" %>' +
+  '</div><div>' +
+  '<%= j render "session" %>' +
+  '</div>'
 )
